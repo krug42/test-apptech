@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PaymentsSubForm from '../PaymentsSubForm';
 import Aside, { AsideText } from '../../base-components/Aside';
 import { Wrapper, Form, SubFormWrapper, Button } from './styled';
+import { colors } from '../../utils/global-styles';
 
 class PaymentsScreen extends Component {
   state = {
@@ -40,24 +41,27 @@ class PaymentsScreen extends Component {
           <AsideText>Срок займа - {monthsAmount} мес.</AsideText>
           <AsideText big>Выбранная стратегия</AsideText>
           <AsideText>Первоначальный взнос - {initialPayment} руб.</AsideText>
-          <AsideText>Ежемесячный взнос - {monthlyPayment} мес.</AsideText>
+          <AsideText>Ежемесячный взнос - {monthlyPayment} руб.</AsideText>
         </Aside>
         <Form onSubmit={this.handleSubmit}>
           <SubFormWrapper>
-            <PaymentsSubForm 
-              text="Первоначальный взнос"
+            <PaymentsSubForm
               maxAmount="100000"
               value={initialPayment}
               handleChange={this.handleChange}
-              type="initialPayment"/>
+              type="initialPayment">
+              Первоначальный взнос
+            </PaymentsSubForm>
           </SubFormWrapper>
           <SubFormWrapper>
-            <PaymentsSubForm 
-              text="Ежемесячный взнос"
+            <PaymentsSubForm
               maxAmount="10000"
               value={monthlyPayment}
               handleChange={this.handleChange}
-              type="monthlyPayment"/>
+              color={colors.orange}
+              type="monthlyPayment">
+              Ежемесячный взнос
+            </PaymentsSubForm>
           </SubFormWrapper>
           <Button onClick={setupAppScreen(1)}>Перерасчёт</Button>
           <Button type="submit" primary>Рассчитать</Button>

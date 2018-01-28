@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colors } from '../../utils/colors';
+import { colors } from '../../utils/global-styles';
 
 export const NumberInput = styled.input`
   border: none;
@@ -15,4 +15,22 @@ export const NumberInput = styled.input`
 
 export const Text = styled.span`
   font-size: 1.1em;
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-flow: column nowrap;
+  margin: 0 auto 5%;
+
+  > span {
+    text-align: center;
+    font-size: 1.3em;
+    margin: 0 auto;
+
+    /* some dirty fix */
+    @media (min-width: 770px) and (max-width: 891px) {
+      &:first-child {
+        height: 3em;
+      }
+  }
 `;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProgramScreen from'../ProgramScreen';
 import PaymentsScreen from '../PaymentsScreen';
 import FinalScreen from '../FinalScreen';
-import { Wrapper, Navbar, Item, Text } from './styled';
+import { Wrapper, Navbar, Item, NavText, NavHeader } from './styled';
 
 class App extends Component {
   state = {
@@ -17,12 +17,14 @@ class App extends Component {
   handleClick = (index) => (e) => {
     e.preventDefault();
     this.setState({ openedScreenIndex: index });
+    window.scrollTo(0, 0);
   }
 
   handleForms = (obj) => {
     this.setState({
       ...obj
     });
+    window.scrollTo(0, 0);
   }
 
   render() {
@@ -39,19 +41,19 @@ class App extends Component {
         <Navbar>
           <li>
             <Item onClick={this.handleClick(1)} active={index === 1} count="1">
-              <Text primary>Программа</Text>
-              <Text>выбор параметров</Text>
+              <NavHeader>Программа</NavHeader>
+              <NavText>выбор параметров</NavText>
             </Item>
           </li>
           <li>
             <Item onClick={this.handleClick(2)} active={index === 2} count="2">
-              <Text primary>Стратегия</Text>
-              <Text>взносы по программе</Text></Item>
+              <NavHeader>Стратегия</NavHeader>
+              <NavText>взносы по программе</NavText></Item>
           </li>
           <li>
             <Item onClick={this.handleClick(3)} active={index === 3} count="3">
-              <Text primary>Игог</Text>
-              <Text>расчёт ожидания</Text></Item>
+              <NavHeader>Игог</NavHeader>
+              <NavText>расчёт ожидания</NavText></Item>
           </li>
         </Navbar>
         {

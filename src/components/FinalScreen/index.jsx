@@ -9,7 +9,8 @@ import {
   Sign, 
   Ul, 
   ButtonWrapper,
-  Button } from './styled';
+  Button,
+  RecomendationWrapper } from './styled';
 
 function FinalScreen (props) {
   const { 
@@ -52,14 +53,16 @@ function FinalScreen (props) {
           <Num>{Math.ceil(result)}</Num>
           <Sign>месяцев</Sign>
         </Circle>
-        <CenteredText>
-          Рекомендации для уменьшения срока ожидания
-        </CenteredText>
+        <RecomendationWrapper>
+          <CenteredText>
+            Рекомендации для уменьшения срока ожидания
+          </CenteredText>
           <Ul>
             <li>Уменьшите сумма и срок займа;</li>
             <li>Увеличьте первоначальный и ежемесячный взносы;</li>
             <li>Учавствуйте в специальных акциях для Пайщиков.</li>
           </Ul>
+        </RecomendationWrapper>
         <ButtonWrapper>
           <Button onClick={setupAppScreen(1)}>Перерасчет</Button>
           <Button important>Сохранить в PDF</Button>
