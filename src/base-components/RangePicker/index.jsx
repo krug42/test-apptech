@@ -6,9 +6,9 @@ function RangePicker(props) {
 
   return (
     <Wrapper color={color}>
-      <input class="range" type="range" min={min} max={max} step={step} value={value} onChange={handleChange} />
-      <progress class="progress" min={min} max={max} step={step} value={value} />
-      <span class="track"></span>
+      <input className="range" type="range" min={min} max={max} step={step} value={value} onChange={handleChange} />
+      <progress className="progress" min={min} max={max} step={step} value={value} />
+      <span className="track"></span>
     </Wrapper>
     );
 }
