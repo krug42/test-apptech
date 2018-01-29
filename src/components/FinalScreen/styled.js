@@ -102,7 +102,8 @@ export const Ul = styled.ul`
 `;
 
 export const RecomendationWrapper = styled.div`
-  margin: 0 auto;
+  align-self: center;
+  max-width: 100%;
 `;
 
 export const Button = BaseButton.extend`

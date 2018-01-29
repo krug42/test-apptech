@@ -15,18 +15,20 @@ export const NumberInput = styled.input`
 
 export const Text = styled.span`
   font-size: 1.1em;
+  line-height: 1.5em;
 `;
 
 export const Wrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
   margin-bottom: 1em;
+  align-items: center;
 
   > span {
     text-align: center;
     font-size: 1.3em;
     margin: 0 auto;
+    max-width: 100%;
 
     /* some dirty fix */
     @media (min-width: 770px) and (max-width: 891px) {
