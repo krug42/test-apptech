@@ -29,7 +29,6 @@ export const Wrapper = styled.span`
       cursor: pointer;
       margin-top: -3px;
     }
-
     
     &::-webkit-slider-runnable-track {
       width: 100%;
@@ -47,12 +46,13 @@ export const Wrapper = styled.span`
     
     &::-moz-range-progress {
       border-radius: 5px;
+      height: ${({ trackHeight }) => trackHeight || 5}px;
       background: ${({ color }) => color || colors.blueBase};
     }
     
     &::-moz-range-track {
+      height: 12px;
       background: ${colors.lightPurple};
-      height: 5px;
       border-radius: 5px;
     }
     
@@ -106,7 +106,6 @@ export const Wrapper = styled.span`
     &::-moz-progress-bar {
       height: 0;
     }
-    
   }
 
   .track {
