@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Input, Select } from './styled';
 import BaseButton from '../../base-components/BaseButton';
+import { programs } from '../../utils/constants';
 
 class ProgramForm extends Component {
   state = {
@@ -43,8 +44,9 @@ class ProgramForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Select name="program" value={programValue} onChange={this.handleChange} required>
           <option value="" hidden>Программа</option>
-          <option value="auto">Автомобиль</option>
-          <option value="realty">Недвижимость</option>
+          {Object.keys(programs).map((label) => 
+              <option value={label}>{programs[label]}</option>
+            )}
         </Select>
         <Input 
           type="number" 

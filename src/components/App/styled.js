@@ -41,6 +41,7 @@ export const Item = styled.div`
   background-color: ${({ active }) => active ? colors.blueBase : colors.grayBase}; 
   color: ${({ active }) => active ? colors.white : colors.navbarText};
   overflow: hidden;
+  user-select: none;
   
   &::after {
     content: '${({ count }) => count}';

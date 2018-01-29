@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
 import { NumberInput, Text, Wrapper } from './styled';
 import CircularProgressBar from '../../base-components/CircularProgressBar';
+import RangePicker from '../../base-components/RangePicker';
 
 function PaymentsForm(props) {
-  const { value: moneyAmount, children, maxAmount, type, handleChange, color } = props;
+  const { value: moneyAmount, children, minAmount, maxAmount, type, handleChange, color } = props;
   const percentage = moneyAmount / maxAmount * 100;
   console.log(percentage)
 
@@ -21,8 +22,8 @@ function PaymentsForm(props) {
         <Text>{`${moneyAmount} р.`}</Text>
       </Wrapper>
       <Text>Сумма</Text>
-      <NumberInput type="number" value={moneyAmount} onChange={handleChange(type)} min="0" max={maxAmount}/>
-      <input type="range" value={moneyAmount} onChange={handleChange(type)} step="100" min="0" max={maxAmount}/>
+      <NumberInput type="number" value={moneyAmount} onChange={handleChange(type)} min={minAmount} max={maxAmount}/>
+      <RangePicker value={moneyAmount} handleChange={handleChange(type)} color={color} min="0" step="100" max={maxAmount}/>
     </Fragment>
   );
 }

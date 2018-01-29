@@ -6,7 +6,7 @@ import { Wrapper, Navbar, Item, NavText, NavHeader } from './styled';
 
 class App extends Component {
   state = {
-    openedScreenIndex: 3,
+    openedScreenIndex: 1,
     program: '',
     moneyAmount: 0,
     monthsAmount: 0,
@@ -40,24 +40,26 @@ class App extends Component {
       <Wrapper>
         <Navbar>
           <li>
-            <Item onClick={this.handleClick(1)} active={index === 1} count="1">
+            <Item active={index === 1} count="1">
               <NavHeader>Программа</NavHeader>
               <NavText>выбор параметров</NavText>
             </Item>
           </li>
           <li>
-            <Item onClick={this.handleClick(2)} active={index === 2} count="2">
+            <Item active={index === 2} count="2">
               <NavHeader>Стратегия</NavHeader>
               <NavText>взносы по программе</NavText></Item>
           </li>
           <li>
-            <Item onClick={this.handleClick(3)} active={index === 3} count="3">
+            <Item active={index === 3} count="3">
               <NavHeader>Игог</NavHeader>
               <NavText>расчёт ожидания</NavText></Item>
           </li>
         </Navbar>
         {
-          (index === 1) ? <ProgramScreen setupAppState={this.handleForms}/> :
+          (index === 1) ? 
+          <ProgramScreen 
+            setupAppState={this.handleForms}/> :
           (index === 2) ? 
           <PaymentsScreen 
             program={program} 

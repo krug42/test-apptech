@@ -3,6 +3,7 @@ import PaymentsSubForm from '../PaymentsSubForm';
 import Aside, { AsideText } from '../../base-components/Aside';
 import { Wrapper, Form, SubFormWrapper, Button } from './styled';
 import { colors } from '../../utils/global-styles';
+import { programTexts } from '../../utils/constants';
 
 class PaymentsScreen extends Component {
   state = {
@@ -33,9 +34,7 @@ class PaymentsScreen extends Component {
       <Wrapper>
         <Aside>
           <AsideText big>Выбранная программа</AsideText>
-          {(program === 'auto') ? 
-            <AsideText>Новая программа по автомобилю</AsideText> :
-            <AsideText>Новая программа по недвижимости</AsideText>}
+            <AsideText>{programTexts[program]}</AsideText>
           <AsideText big>Параметры</AsideText>
           <AsideText>Сумма займа - {moneyAmount} руб.</AsideText>
           <AsideText>Срок займа - {monthsAmount} мес.</AsideText>
@@ -46,6 +45,7 @@ class PaymentsScreen extends Component {
         <Form onSubmit={this.handleSubmit}>
           <SubFormWrapper>
             <PaymentsSubForm
+              minAmount="0"
               maxAmount="100000"
               value={initialPayment}
               handleChange={this.handleChange}
@@ -55,6 +55,7 @@ class PaymentsScreen extends Component {
           </SubFormWrapper>
           <SubFormWrapper>
             <PaymentsSubForm
+              minAmount="1"
               maxAmount="10000"
               value={monthlyPayment}
               handleChange={this.handleChange}

@@ -11,6 +11,7 @@ import {
   ButtonWrapper,
   Button,
   RecomendationWrapper } from './styled';
+import { programTexts } from '../../utils/constants';
 
 function FinalScreen (props) {
   const { 
@@ -26,9 +27,7 @@ function FinalScreen (props) {
     <Wrapper>
       <Aside>
         <AsideText big>Выбранная программа</AsideText>
-        {(program === 'auto') ? 
-          <AsideText>Новая программа по автомобилю</AsideText> :
-          <AsideText>Новая программа по недвижимости</AsideText>}
+          <AsideText>{programTexts[program]}</AsideText>
         <AsideText big>Параметры</AsideText>
         <AsideText>Сумма займа - {moneyAmount} р.</AsideText>
         <AsideText>Срок займа - {monthsAmount} мес.</AsideText>

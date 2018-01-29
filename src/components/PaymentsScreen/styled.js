@@ -28,7 +28,7 @@ export const SubFormWrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 
   ${media.tablet`
     width: 40%;
