@@ -6,7 +6,7 @@ import { Wrapper, Navbar, Item, NavText, NavHeader } from './styled';
 
 class App extends Component {
   state = {
-    openedScreenIndex: 1,
+    openedScreenIndex: 2,
     program: '',
     moneyAmount: 0,
     monthsAmount: 0,

@@ -14,6 +14,7 @@ export const Input = styled.input`
   margin-bottom: 1.5em;
   font-size: 1.5em;
   color: ${colors.textBase};
+  width: 100%;
 `;
 
 export const Select = Input.withComponent('select');

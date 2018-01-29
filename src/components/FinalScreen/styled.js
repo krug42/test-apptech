@@ -41,12 +41,14 @@ export const CenteredText = styled.p`
 export const Circle = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  border: 4px solid ${colors.blueBase};
-  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
   width: 40vw;
   height: 40vw;
+  margin: 1em auto;
+  border: 4px solid ${colors.blueBase};
+  border-radius: 50%;
   color: ${colors.blueBase};
-  margin: 3% auto 0;
 
   ${media.tablet`
     width: 25vw;
@@ -61,14 +63,12 @@ export const Circle = styled.div`
 
 export const Num = styled.span`
   font-size: 3em;
-  margin: auto auto 0;
   font-weight: 300;
   }
 `;
 
 export const Sign = styled.span`
   font-size: 1.1em;
-  margin: 0 auto auto;
 `;
 
 export const Ul = styled.ul`

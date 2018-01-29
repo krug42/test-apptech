@@ -6,7 +6,6 @@ import RangePicker from '../../base-components/RangePicker';
 function PaymentsForm(props) {
   const { value: moneyAmount, children, minAmount, maxAmount, type, handleChange, color } = props;
   const percentage = moneyAmount / maxAmount * 100;
-  console.log(percentage)
 
   return (
     <Fragment>

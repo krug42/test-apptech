@@ -44,8 +44,8 @@ class ProgramForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Select name="program" value={programValue} onChange={this.handleChange} required>
           <option value="" hidden>Программа</option>
-          {Object.keys(programs).map((label) => 
-              <option value={label}>{programs[label]}</option>
+          {Object.keys(programs).map((label, index) => 
+              <option key={index} value={label}>{programs[label]}</option>
             )}
         </Select>
         <Input 

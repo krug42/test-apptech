@@ -30,6 +30,7 @@ export const Wrapper = styled.span`
       margin-top: -3px;
     }
 
+    
     &::-webkit-slider-runnable-track {
       width: 100%;
       height: ${({ trackHeight }) => trackHeight || 5}px;
@@ -37,6 +38,45 @@ export const Wrapper = styled.span`
       background: transparent;
       border-color: transparent;
       color: transparent;
+    }
+    
+    &::-moz-range-thumb {
+      background: ${({ color }) => color || colors.blueBase};
+      border: ${({ color }) => color || colors.blueBase};
+    }
+    
+    &::-moz-range-progress {
+      border-radius: 5px;
+      background: ${({ color }) => color || colors.blueBase};
+    }
+    
+    &::-moz-range-track {
+      background: ${colors.lightPurple};
+      height: 5px;
+      border-radius: 5px;
+    }
+    
+    &::-ms-thumb {
+      background: ${({ color }) => color || colors.blueBase};
+      border-color: ${colors.white};
+      border-radius: 50%;
+    }
+
+    &::-ms-track {
+      height: 0px;
+      border: ${({ trackHeight }) => trackHeight || 5}px solid transparent;
+    }
+
+    &::-ms-fill-lower {
+      background: ${({ color }) => color || colors.blueBase};
+      height: ${({ trackHeight }) => trackHeight || 5}px;
+      border-radius: 5px;
+    }
+
+    &::-ms-fill-upper {
+      background: ${colors.lightPurple};
+      height: ${({ trackHeight }) => trackHeight || 5}px;
+      border-radius: 5px;
     }
   }
 
@@ -62,6 +102,11 @@ export const Wrapper = styled.span`
       border-radius: 5px;
       background: ${({ color }) => color || colors.blueBase};
     }
+
+    &::-moz-progress-bar {
+      height: 0;
+    }
+    
   }
 
   .track {

@@ -20,7 +20,8 @@ export const Text = styled.span`
 export const Wrapper = styled.div`
   display: flex;
   flex-flow: column nowrap;
-  margin: 0 auto 5%;
+  align-items: center;
+  margin-bottom: 1em;
 
   > span {
     text-align: center;

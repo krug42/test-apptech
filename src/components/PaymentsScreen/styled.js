@@ -14,6 +14,8 @@ export const Wrapper = styled.div`
 export const Form = styled.form`
   display: flex;
   flex-flow: row wrap;
+  /* space-around for ie and space-evenly for others */
+  justify-content: space-around;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
